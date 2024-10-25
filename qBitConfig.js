@@ -5,12 +5,12 @@ import { QBittorrent } from "@ctrl/qbittorrent";
 config();
 
 
-const { QBIT_WEBUI_URL, QBIT_USERNAME, QBIT_PASSWORD } = process.env;
+const { QBIT_ADDRESS, USERNAME, PASSWORD } = process.env;
 
 const client = new QBittorrent({
-  baseUrl: QBIT_WEBUI_URL,
-  username: QBIT_USERNAME,
-  password: QBIT_PASSWORD,
+  baseUrl: QBIT_ADDRESS,
+  username: USERNAME,
+  password: PASSWORD,
 });
 
 export default client;
