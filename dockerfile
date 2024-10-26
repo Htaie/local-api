@@ -17,6 +17,7 @@ COPY --from=build /qbitapi/node_modules ./node_modules
 COPY --from=build /qbitapi/package.json ./package.json
 COPY --from=build /qbitapi/app.js ./app.js
 COPY --from=build /qbitapi/qBitConfig.js ./qBitConfig.js
+COPY --from=build /qbitapi/swaggerConfig.js ./swaggerConfig.js
 
 # Set environment variables for the container
 ENV PORT=9443
