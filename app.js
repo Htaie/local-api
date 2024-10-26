@@ -1,10 +1,12 @@
 import { config } from "dotenv";
 import express from "express";
 import client from "./qBitConfig.js";
+import cors from 'cors';
+
 config();
 const app = express();
 const port = process.env.PORT || 3000; 
-app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './swaggerConfig.js';
 

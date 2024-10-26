@@ -1,5 +1,5 @@
 # Build stage
-FROM --platform=$BUILDPLATFORM node:alpine AS build
+FROM --platform=linux/amd64 node:alpine AS build
 
 WORKDIR /qbitapi
 
@@ -9,7 +9,7 @@ RUN npm install && npm cache clean --force
 COPY . .
 
 # Final stage
-FROM --platform=$BUILDPLATFORM node:alpine
+FROM --platform=linux/amd64 node:alpine 
 
 WORKDIR /qbitapi
 
@@ -25,6 +25,6 @@ ENV QBIT_ADDRESS=""
 ENV USERNAME=""
 ENV PASSWORD=""
 
-EXPOSE 9443
+EXPOSE 4443
 
 CMD ["sh", "-c", "npm start"]
